@@ -1,0 +1,6 @@
+<launch>
+
+<node name = "webcam" pkg = "ros_cv_interiit_ed20b067" type = "image_publisher.py" output= "screen" respawn = "true" />
+<node name = "aruco_tracker" pkg = "ros_cv_interiit_ed20b067" type = "aruco_ros.py" output= "screen" respawn = "true" />
+<node name = "subscriber_node" pkg = "ros_cv_interiit_ed20b067" type = "aruco_subscriber.py" output= "screen" respawn = "true" />
+</launch>
