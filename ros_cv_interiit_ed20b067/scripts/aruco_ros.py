@@ -49,8 +49,7 @@ def rotationMatrixToEulerAngles(R):
 
 
 calib_path  = ""
-# camera_matrix   = np.loadtxt(calib_path+'camera_matrix.txt', delimiter=',')
-# camera_distortion   = np.loadtxt(calib_path+'camera_distortion.txt', delimiter=',')
+
 camera_matrix = np.array([[698.30269162,   0,         482.23369024],
  [  0,         699.30531713, 281.24277949],
  [  0,           0,           1.        ]])
@@ -115,13 +114,11 @@ def image_callback(image_message):
     if cv2.waitKey(1) & 0xFF == ord('q'):
         return
 if __name__ == "__main__":
-    # Initialize the ROS node and the CvBridge object
+   
     rospy.init_node("aruco_tracker")
     bridge = CvBridge()
 
-    # Subscribe to the video topic
     image_sub = rospy.Subscriber("/image/aruco", Image, image_callback)
 
-    # Keep the node running and process incoming messages
     rospy.spin()
 
